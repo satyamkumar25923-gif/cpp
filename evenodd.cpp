@@ -2,27 +2,21 @@
 #include <vector>
 
 int main() {
-    std::vector<int> sum;
-    sum.push_back(2);
-    sum.push_back(4);
-    sum.push_back(3);
-    sum.push_back(6);
-    sum.push_back(1);
-    sum.push_back(9);
+    std::vector<int> numbers = {2, 4, 3, 6, 1, 9};
 
-    int total = 0;
-    long long product = 1;
+    int evenSum = 0;
+    long long oddProduct = 1;
 
-    for (int i = 0; i < sum.size(); i++) {
-        if (sum[i] % 2 == 0) {
-            total = total + sum[i];
+    for (size_t i = 0; i < numbers.size(); i++) {
+        if (numbers[i] % 2 == 0) {
+            evenSum += numbers[i];
         } else {
-            product = product * sum[i];
+            oddProduct *= numbers[i];
         }
     }
 
-    std::cout << "sum of even no. is " << total << "\n";
-    std::cout << "product of odd no. is " << product << "\n";
+    std::cout << "Sum of even numbers is: " << evenSum << "\n";
+    std::cout << "Product of odd numbers is: " << oddProduct << "\n";
 
     return 0;
 }
